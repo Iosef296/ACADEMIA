@@ -10,7 +10,7 @@ export default registerAs(
         type: 'postgres',
         url: process.env.DATABASE_URL,
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-        synchronize: !isProd,
+        synchronize: true,
         ssl: { rejectUnauthorized: false },
         extra: { ssl: { rejectUnauthorized: false } },
         retryAttempts: 3,

@@ -8,7 +8,7 @@ exports.default = (0, config_1.registerAs)('database', () => {
             type: 'postgres',
             url: process.env.DATABASE_URL,
             entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-            synchronize: !isProd,
+            synchronize: true,
             ssl: { rejectUnauthorized: false },
             extra: { ssl: { rejectUnauthorized: false } },
             retryAttempts: 3,
