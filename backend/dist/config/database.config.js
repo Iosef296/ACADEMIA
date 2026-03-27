@@ -10,6 +10,9 @@ exports.default = (0, config_1.registerAs)('database', () => {
             entities: [__dirname + '/../**/*.entity{.ts,.js}'],
             synchronize: !isProd,
             ssl: { rejectUnauthorized: false },
+            extra: { ssl: { rejectUnauthorized: false } },
+            retryAttempts: 3,
+            retryDelay: 2000,
         };
     }
     return {
