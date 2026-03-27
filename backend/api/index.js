@@ -6,8 +6,25 @@ const express = require('express');
 let server;
 let isReady = false;
 
+async function testDbConnection() {
+  const { Client } = require('pg');
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false },
+    connectionTimeoutMillis: 5000,
+  });
+  try {
+    await client.connect();
+    console.log('[DB TEST] Connection successful');
+    await client.end();
+  } catch (err) {
+    console.error('[DB TEST] Connection failed:', err.message);
+  }
+}
+
 async function bootstrap() {
   if (isReady) return;
+  await testDbConnection();
 
   const { NestFactory } = require('@nestjs/core');
   const { ExpressAdapter } = require('@nestjs/platform-express');
@@ -24,6 +41,11 @@ async function bootstrap() {
 }
 
 module.exports = async (req, res) => {
-  await bootstrap();
-  server(req, res);
+  try {
+    await bootstrap();
+    server(req, res);
+  } catch (err) {
+    console.error('[BOOTSTRAP ERROR]', err.message, err.stack);
+    res.status(500).json({ error: err.message });
+  }
 };
