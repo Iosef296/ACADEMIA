@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Historias de Usuario — MathLearn</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; background: #fff; padding: 40px; }
+
+  h1 { font-size: 2.8em; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; }
+  h2 { font-size: 1.1em; font-weight: normal; margin-bottom: 24px; color: #444; }
+
+  .modulo { margin-bottom: 52px; }
+  .modulo-titulo { font-size: 2em; font-weight: bold; text-transform: uppercase; margin-bottom: 4px; }
+  .modulo-subtitulo { font-size: 0.95em; color: #555; margin-bottom: 18px; }
+
+  .cards { display: flex; flex-wrap: wrap; gap: 20px; }
+
+  .card { width: 280px; border: 1.5px solid #ccc; font-size: 0.82em; }
+
+  .card-header {
+    background: #f5f0c8;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 10px 6px;
+    border-bottom: 1.5px solid #ccc;
+    text-transform: uppercase;
+  }
+
+  .card-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .card-label {
+    background: #f5f0c8;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 4px;
+    text-transform: uppercase;
+    border-right: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-value {
+    padding: 10px 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4;
+  }
+
+  .card-criteria-header {
+    background: #f5f0c8;
+    text-align: center;
+    font-weight: bold;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    text-transform: uppercase;
+  }
+
+  .card-criteria-body {
+    padding: 12px 10px;
+    line-height: 1.6;
+    text-align: center;
+    min-height: 110px;
+  }
+</style>
+</head>
+<body>
+
+<h1>MathLearn — Historias de Usuario</h1>
+<h2>Plataforma educativa de matemáticas · 11 módulos · 45 historias</h2>
+
+<!-- ============================= -->
+<!-- 1. AUTENTICACIÓN              -->
+<!-- ============================= -->
+<div class="modulo">
+  <div class="modulo-titulo">1. Autenticación</div>
+  <div class="modulo-subtitulo">Registro e inicio de sesión en la plataforma</div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 001</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">crear una cuenta con mi nombre, correo y contraseña</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">acceder a la plataforma</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        El formulario pide nombre, correo y contraseña.<br>
+        Si el correo ya está registrado se muestra un aviso de error.<br>
+        Al registrarse exitosamente el sistema inicia sesión automáticamente.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 002</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">iniciar sesión con mi correo y contraseña</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">entrar a mi cuenta</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Si los datos son correctos el sistema redirige al dashboard.<br>
+        Si son incorrectos se muestra el mensaje "Credenciales inválidas".<br>
+        La sesión se mantiene aunque se cierre y reabra el navegador.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 003</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">que mi sesión se renueve automáticamente</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">no tener que iniciar sesión cada poco tiempo</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        La sesión se renueva de forma transparente mientras el usuario esté activo.<br>
+        Solo se cierra si el usuario lo solicita o lleva 7 días inactivo.<br>
+        El usuario no nota ninguna interrupción durante la renovación.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- 2. USUARIOS                   -->
+<!-- ============================= -->
+<div class="modulo">
+  <div class="modulo-titulo">2. Usuarios</div>
+  <div class="modulo-subtitulo">Perfiles, roles y estadísticas personales</div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 004</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">ver y editar mi perfil</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">mantener mis datos actualizados</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        El perfil muestra nombre, correo y foto de perfil.<br>
+        Se puede cambiar el nombre y la foto.<br>
+        Los cambios se reflejan en toda la plataforma al guardar.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 005</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ADMINISTRADOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">asignar roles a los usuarios</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">controlar qué puede hacer cada persona en la plataforma</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Los roles disponibles son: estudiante, profesor y administrador.<br>
+        Solo un administrador puede cambiar el rol de otro usuario.<br>
+        El usuario afectado verá sus nuevas opciones la próxima vez que ingrese.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 006</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">ver mis estadísticas de aprendizaje en mi perfil</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">conocer mi historial de progreso de un vistazo</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        El perfil muestra puntos acumulados, racha actual y temas trabajados.<br>
+        Las estadísticas se actualizan automáticamente tras cada actividad.<br>
+        Se puede ver el historial de ejercicios y exámenes realizados.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- 3. TEMAS Y EJERCICIOS         -->
+<!-- ============================= -->
+<div class="modulo">
+  <div class="modulo-titulo">3. Temas y Ejercicios</div>
+  <div class="modulo-subtitulo">Contenido del curso, resolución, editor de fórmulas, pasos de solución y gráficos</div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 007</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">ver todos los temas organizados por nivel</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">entender cuál es mi ruta de aprendizaje</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Los temas se muestran en árbol jerárquico (general → específico).<br>
+        Cada tema indica si está disponible o bloqueado.<br>
+        Se pueden expandir los subtemas de cada sección.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 008</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">desbloquear temas nuevos al completar los anteriores</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">avanzar de forma ordenada en mi aprendizaje</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Un tema bloqueado muestra qué temas previos hay que completar.<br>
+        Al completar un tema los siguientes se habilitan automáticamente.<br>
+        El cambio se refleja de inmediato en el árbol de temas.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 009</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">PROFESOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">crear temas y definir cuáles son sus prerequisitos</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">estructurar el contenido del curso</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Se puede crear un tema con título, descripción y nivel.<br>
+        Se puede indicar qué otros temas deben completarse antes.<br>
+        Solo profesores y administradores pueden crear o editar temas.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 010</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">resolver ejercicios matemáticos paso a paso</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">aprender el proceso completo de solución</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        El ejercicio muestra el enunciado con fórmulas legibles.<br>
+        Los pasos se revelan uno a uno con pistas opcionales.<br>
+        Al completarlo puedo indicar si fue fácil, adecuado o difícil.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 011</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">indicar qué tan difícil me pareció un ejercicio</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">ayudar a mejorar el nivel del contenido</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        La valoración aparece al terminar el ejercicio.<br>
+        Las opciones son: fácil, adecuado, difícil.<br>
+        Solo se puede valorar una vez por ejercicio.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 012</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">PROFESOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">escribir fórmulas matemáticas y verlas renderizadas al instante</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">crear enunciados con notación matemática correcta</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Las fórmulas se muestran en tiempo real con notación matemática estándar.<br>
+        Soporta fracciones, integrales, matrices y símbolos comunes.<br>
+        El contenido puede guardarse como ejercicio o paso de solución.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 013</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">PROFESOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">agregar, editar y ordenar los pasos de solución</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">guiar al estudiante durante la resolución</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Cada paso puede tener una pista y una advertencia opcionales.<br>
+        Los pasos se pueden reordenar arrastrando.<br>
+        Los cambios se guardan individualmente por paso.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 014</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">PROFESOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">crear ejercicios que generen variantes con números distintos</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">que cada estudiante reciba una versión diferente del mismo problema</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Puedo definir qué valores varían y en qué rango.<br>
+        El sistema genera automáticamente valores distintos para cada estudiante.<br>
+        El enunciado se actualiza con los valores generados al mostrarse.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 015</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">PROFESOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">crear gráficos matemáticos desde el editor</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">ilustrar los conceptos del ejercicio de forma visual</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        El editor soporta gráficos de funciones, vectores y figuras geométricas.<br>
+        Se muestra vista previa del gráfico mientras se edita.<br>
+        El gráfico generado se adjunta al ejercicio correspondiente.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 016</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">PROFESOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">que el sistema sugiera qué tipo de gráfico necesita el ejercicio</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">no tener que configurarlo manualmente cada vez</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        El sistema analiza el contenido del ejercicio y sugiere el tipo de gráfico.<br>
+        Los tipos reconocidos incluyen: función, vector y geometría.<br>
+        Puedo aceptar la sugerencia o cambiarla manualmente.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 017</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">PROFESOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">guardar gráficos y reutilizarlos en otros ejercicios</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">no tener que crear el mismo gráfico más de una vez</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Los gráficos creados se guardan en una biblioteca personal.<br>
+        Se pueden buscar y adjuntar a cualquier ejercicio o examen.<br>
+        Se puede editar un gráfico sin afectar los ejercicios que ya lo usan.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- 4. PDF Y OCR                  -->
+<!-- ============================= -->
+<div class="modulo">
+  <div class="modulo-titulo">4. PDF y OCR</div>
+  <div class="modulo-subtitulo">Generación de documentos impresos y digitalización de escritura a mano</div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 018</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">PROFESOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">generar un documento PDF de un examen o guía</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">entregarlo impreso a los estudiantes</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        El PDF incluye encabezado, enunciados con fórmulas y espacio para respuestas.<br>
+        Las fórmulas matemáticas se ven correctamente al imprimir.<br>
+        El archivo se descarga con un clic.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 019</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">PROFESOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">armar el PDF eligiendo ejercicios y plantilla</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">personalizar el formato del documento según la ocasión</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Puedo seleccionar y ordenar los ejercicios que incluirá el documento.<br>
+        Las plantillas disponibles son: examen, tarea y guía de práctica.<br>
+        Hay vista previa antes de descargar el archivo final.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 020</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">subir una foto de un ejercicio escrito a mano</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">que el sistema lo digitalice automáticamente</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Se aceptan fotos en formato JPG y PNG.<br>
+        El sistema extrae el texto de la imagen en menos de 10 segundos.<br>
+        Si el reconocimiento falla, el sistema lo intenta por otra vía automáticamente.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 021</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">PROFESOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">digitalizar enunciados escritos en papel</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">cargarlos rápidamente como ejercicios en la plataforma</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        El texto extraído se puede revisar y corregir antes de guardar.<br>
+        El contenido detectado se puede insertar directamente en el editor de fórmulas.<br>
+        El proceso devuelve el resultado en menos de 10 segundos.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- 5. EXÁMENES                   -->
+<!-- ============================= -->
+<div class="modulo">
+  <div class="modulo-titulo">5. Exámenes</div>
+  <div class="modulo-subtitulo">Evaluaciones en línea con resultados automáticos</div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 022</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">PROFESOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">crear exámenes donde cada estudiante reciba preguntas con números distintos</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">evitar que los estudiantes copien entre sí</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Se pueden incluir preguntas con variantes numéricas automáticas.<br>
+        Cada estudiante ve valores diferentes en el mismo enunciado.<br>
+        Solo profesores y administradores pueden crear exámenes.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 023</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">que las preguntas del examen se ajusten a mi nivel</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">que no sea ni demasiado fácil ni demasiado difícil</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Las preguntas se eligen según mi historial de respuestas previas.<br>
+        Si respondo bien, las siguientes son más difíciles, y viceversa.<br>
+        El examen queda registrado en mi historial de evaluaciones.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 024</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">ver el tiempo restante durante el examen</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">organizar bien mi tiempo de respuesta</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        El cronómetro es visible en todo momento durante el examen.<br>
+        Se muestra una advertencia cuando queden 5 minutos.<br>
+        Al agotarse el tiempo, el examen se envía automáticamente.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 025</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">enviar mis respuestas al terminar el examen</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">obtener mi calificación de inmediato</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        El botón de envío pide confirmación antes de finalizar.<br>
+        El puntaje se muestra al instante tras el envío.<br>
+        No se pueden modificar las respuestas una vez enviadas.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 026</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">ver el detalle de mis respuestas correctas e incorrectas</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">saber en qué temas debo mejorar</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Se muestra cada pregunta con mi respuesta y la correcta.<br>
+        Se indica a qué tema pertenece cada pregunta fallada.<br>
+        Se muestra el puntaje total, número de correctas e incorrectas.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- 6. FORO                       -->
+<!-- ============================= -->
+<div class="modulo">
+  <div class="modulo-titulo">6. Foro</div>
+  <div class="modulo-subtitulo">Espacio de preguntas, respuestas y colaboración</div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 027</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">publicar una pregunta en el foro</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">recibir ayuda de profesores y compañeros</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        El formulario permite escribir título, descripción y adjuntar archivos.<br>
+        La pregunta queda asociada al tema matemático correspondiente.<br>
+        Todos los usuarios de la plataforma pueden verla.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 028</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">responder las preguntas de otros compañeros</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">colaborar y compartir lo que sé</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Las respuestas pueden incluir texto, fórmulas y archivos adjuntos.<br>
+        El autor de la pregunta puede marcar una respuesta como la correcta.<br>
+        Las respuestas aparecen en orden cronológico bajo la pregunta.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 029</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">adjuntar imágenes o fotos a mis publicaciones</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">mostrar visualmente mi duda o solución</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Se aceptan imágenes JPG y PNG, y documentos PDF.<br>
+        Los archivos se ven directamente dentro de la publicación.<br>
+        El tamaño máximo por archivo es 5 MB.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- 7. CLASES EN VIVO             -->
+<!-- ============================= -->
+<div class="modulo">
+  <div class="modulo-titulo">7. Clases en Vivo</div>
+  <div class="modulo-subtitulo">Videoconferencias integradas en la plataforma</div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 030</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">PROFESOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">crear una sala de clase virtual</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">dar clases en tiempo real a mis estudiantes</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        La sala se crea con nombre, tema y fecha programada.<br>
+        Se genera un enlace de acceso que se puede compartir.<br>
+        La sala aparece en el listado de clases programadas.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 031</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">unirme a una clase virtual desde la plataforma</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">participar sin necesidad de abrir otras aplicaciones</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        La videollamada se abre dentro de la misma plataforma.<br>
+        El estudiante entra con su nombre de perfil automáticamente.<br>
+        Las clases activas aparecen destacadas en el módulo de clases en vivo.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- 8. PROGRESO Y RUTINAS         -->
+<!-- ============================= -->
+<div class="modulo">
+  <div class="modulo-titulo">8. Progreso y Rutinas</div>
+  <div class="modulo-subtitulo">Seguimiento de avance, rachas, errores y plan de estudio personalizado</div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 032</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">ver mis puntos acumulados y mi nivel actual</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">saber cuánto he avanzado en la plataforma</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Los puntos aumentan al completar ejercicios, exámenes y desafíos.<br>
+        El nivel sube automáticamente al acumular suficientes puntos.<br>
+        Se muestra una barra de avance hacia el siguiente nivel.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 033</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">ver cuántos días seguidos llevo estudiando</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">motivarme a mantener el hábito de estudio diario</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        La racha sube al completar al menos una actividad por día.<br>
+        Si no se estudia un día, la racha vuelve a cero.<br>
+        Se muestra la racha actual y la racha más larga alcanzada.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 034</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">ver en qué temas cometo más errores</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">saber dónde debo reforzar mi aprendizaje</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Los errores se registran automáticamente al fallar preguntas o ejercicios.<br>
+        Se muestran los temas con más errores de mayor a menor.<br>
+        Se sugieren ejercicios para practicar los temas más fallados.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 035</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">indicar cómo me siento al empezar a estudiar</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">que la plataforma adapte la sesión a mi estado del día</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        La pregunta aparece una vez al día al ingresar a la plataforma.<br>
+        Las opciones son: excelente, bien, regular, cansado, estresado.<br>
+        Según la respuesta, la rutina del día ajusta su dificultad y duración.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 036</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">recibir un plan de estudio diario personalizado</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">saber exactamente qué practicar cada día</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        El plan considera mi estado de ánimo, mis puntos y mis errores frecuentes.<br>
+        Incluye una secuencia de actividades con tiempo estimado por cada una.<br>
+        La duración total se adapta al tiempo que tengo disponible.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 037</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">recibir mini lecciones enfocadas en mis puntos débiles</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">mejorar en los temas donde tengo más dificultades</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Las mini lecciones se basan en los temas donde más me equivoco.<br>
+        Cada una tiene duración estimada y un objetivo claro.<br>
+        Se marca como completada al terminar la actividad correspondiente.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- 9. GAMIFICACIÓN               -->
+<!-- ============================= -->
+<div class="modulo">
+  <div class="modulo-titulo">9. Gamificación</div>
+  <div class="modulo-subtitulo">Insignias, desafíos semanales, recompensas y avatar</div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 038</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">ganar insignias por los logros que alcance</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">sentirme reconocido por mi esfuerzo</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Las insignias se otorgan automáticamente al cumplir las condiciones.<br>
+        Ejemplos: "7 días seguidos estudiando", "10 ejercicios completados".<br>
+        Las insignias ganadas se muestran en mi perfil.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 039</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">participar en desafíos semanales</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">competir con otros estudiantes y ganar puntos extra</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Cada semana hay un desafío con fecha de inicio y fin.<br>
+        Al completarlo se reciben puntos adicionales.<br>
+        Se puede ver el ranking de participantes del desafío activo.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 040</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">canjear mis puntos por recompensas</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">obtener beneficios dentro de la plataforma</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Cada recompensa muestra claramente cuántos puntos cuesta.<br>
+        Al canjear, los puntos se descuentan de mi saldo.<br>
+        Puedo ver el historial de recompensas que he canjeado.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 041</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">personalizar mi avatar</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">tener una identidad visual propia en la plataforma</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Puedo elegir accesorios y elementos que haya desbloqueado.<br>
+        Algunos elementos se obtienen al ganar insignias o canjear recompensas.<br>
+        El avatar aparece en el perfil, el ranking y el foro.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- 10. NOTIFICACIONES            -->
+<!-- ============================= -->
+<div class="modulo">
+  <div class="modulo-titulo">10. Notificaciones</div>
+  <div class="modulo-subtitulo">Avisos en tiempo real dentro de la plataforma</div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 042</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ESTUDIANTE</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">recibir avisos sin tener que actualizar la página</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">estar al tanto de novedades al instante</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Los avisos aparecen automáticamente mientras estoy conectado.<br>
+        Se muestran como alertas en la barra de navegación.<br>
+        Puedo ver el historial de notificaciones anteriores.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 043</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">PROFESOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">enviar avisos a mis estudiantes</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">comunicarles información importante sobre clases o exámenes</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Puedo enviar un aviso a un estudiante o a todos a la vez.<br>
+        Los estudiantes que no estén conectados lo recibirán al ingresar.<br>
+        Cada aviso incluye el mensaje y la fecha en que fue enviado.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- 11. ADMINISTRACIÓN            -->
+<!-- ============================= -->
+<div class="modulo">
+  <div class="modulo-titulo">11. Administración</div>
+  <div class="modulo-subtitulo">Panel de control para administradores de la plataforma</div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 044</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ADMINISTRADOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">buscar y gestionar a todos los usuarios registrados</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">mantener el control de quién accede a la plataforma</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Se puede buscar usuarios por nombre, correo o rol.<br>
+        Se puede activar, desactivar o cambiar el rol de cualquier usuario.<br>
+        Solo administradores tienen acceso a este panel.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Historia de Usuario 045</div>
+      <div class="card-row"><div class="card-label">Como</div><div class="card-value">ADMINISTRADOR</div></div>
+      <div class="card-row"><div class="card-label">Quiero</div><div class="card-value">gestionar el árbol completo de temas matemáticos</div></div>
+      <div class="card-row"><div class="card-label">Para</div><div class="card-value">mantener el contenido académico organizado y actualizado</div></div>
+      <div class="card-criteria-header">Criterios de Aceptación</div>
+      <div class="card-criteria-body">
+        Se pueden crear, editar y eliminar temas desde el panel.<br>
+        Al eliminar un tema con ejercicios o subtemas asociados se muestra una advertencia.<br>
+        Los cambios se reflejan de inmediato para todos los usuarios.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
