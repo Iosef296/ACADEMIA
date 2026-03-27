@@ -34,7 +34,10 @@ async function bootstrap() {
   server = express();
   const app = await NestFactory.create(AppModule, new ExpressAdapter(server));
   app.setGlobalPrefix('api');
-  app.enableCors({ origin: '*', credentials: true });
+  app.enableCors({
+    origin: (origin, callback) => callback(null, true),
+    credentials: true,
+  });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
   await app.init();
   isReady = true;
